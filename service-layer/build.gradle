@@ -1,0 +1,10 @@
+ext {
+    commonsConfigurationVersion = '1.10'
+    javaxMailVersion = '1.4.7'
+}
+
+dependencies {
+    implementation group: 'javax.mail', name: 'mail', version: javaxMailVersion
+    implementation group: 'commons-configuration', name: 'commons-configuration', version: commonsConfigurationVersion
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+}

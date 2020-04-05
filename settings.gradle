@@ -1,0 +1,3 @@
+rootProject.name = 'mailsender'
+include 'configuration-layer', 'web-layer', 'service-layer'
+
