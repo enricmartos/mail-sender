@@ -24,7 +24,7 @@ This REST API allows you to send emails by using the _javax.mail_ built-in libra
 
 ## Build setup
 
-- Clone this repo to your local machine. This application can be executed either with docker or with maven wrapper:
+- Clone this repo to your local machine. This application can be executed with docker:
 
 ### With Docker
 
