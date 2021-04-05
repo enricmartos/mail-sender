@@ -45,6 +45,7 @@ public class MailSenderServiceImpl implements MailSenderService {
         properties.put("mail.smtp.starttls.enable", propertiesConfig.getProperty("mail.smtp.starttls.enable"));
 
         Authenticator authenticator = new Authenticator() {
+            @Override
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(propertiesConfig.getProperty("mail.smtp.username"),
                         propertiesConfig.getProperty("mail.smtp.password"));
@@ -55,7 +56,6 @@ public class MailSenderServiceImpl implements MailSenderService {
     }
 
     private void sendEmail(Session session, String to, String subject, String body) throws MessagingException {
-//    private void sendEmail(Session session, String from, List<String> to, String subject, String body) throws MessagingException {
         Message msg = new MimeMessage(session);
         msg.addHeader("Content-type", "text/HTML; charset=UTF-8");
         msg.setFrom(new InternetAddress(propertiesConfig.getProperty("mail.smtp.username")));
@@ -63,9 +63,6 @@ public class MailSenderServiceImpl implements MailSenderService {
         msg.setSentDate(new Date());
         msg.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
 
-//        for (String tos : to) {
-//            msg.addRecipient(Message.RecipientType.TO, new InternetAddress(tos));
-//        }
 
         msg.setContent(body, "text/html; charset=UTF-8");
         Transport.send(msg);

@@ -5,4 +5,5 @@ services:
       context: ${PWD}
       dockerfile: Dockerfile-debug
     ports:
-      - 8086:8086
+      - 8080:8080
+      - 5005:5005

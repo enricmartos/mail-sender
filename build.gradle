@@ -11,7 +11,7 @@ subprojects {
 
     ext {
         checkstyleVersion = '6.1.1'
-        pmdVersion = '5.3.6'
+        pmdVersion = '6.0.0'
     }
     repositories {
         jcenter()
@@ -22,8 +22,8 @@ subprojects {
     apply plugin: 'pmd'
     pmd {
         toolVersion = pmdVersion
-        pmdMain.enabled = true
-        pmdTest.enabled= true
+        pmdMain.enabled = false
+        pmdTest.enabled= false
     }
     tasks.withType(Pmd){
         reports{
