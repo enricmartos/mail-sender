@@ -35,7 +35,7 @@ $ docker-compose up
 ## Validate test scenarios
 
 #### Validate email sending
-- Set your mail credentials (mail.smtp.username and mail.smtp.password) in mailsender.properties.
+- Set your mail credentials (_mail.smtp.username_ and _mail.smtp.password_) in mailsender.properties.
 - Execute the request below and verify that the email is actually sent.
 
 POST http://localhost:8080/mail-sender/api/v1/email
